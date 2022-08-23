@@ -1,0 +1,19 @@
+lab : https://portswigger.net/web-security/file-path-traversal/lab-superfluous-url-decode
+
+goal : is to bypass the path traversal block by url encoding
+
+what'is url encoding :
+
+Input (request)  : hamid & lala 
+Url : www.kaka.com/search=hamid&lala
+The url is in decoded format that means our inpurt is the same on the url
+Url :www.kaka.com/search=hamid+%26+lala
+The url is in coded format we see + %26….
+So :
+When : we send an input to a web browser the web browser has url encoded it before sending it to the web server to get the result
+
+steps :
+1-we intercept the product detail page by burp suite
+2-we send the get request result to the reapeter
+3-we try to code the path traversal parameters like : the coded version of / is %252f ...
+4-finnally we can get the result by :..%252f..%252f..%252fetc/passwd 

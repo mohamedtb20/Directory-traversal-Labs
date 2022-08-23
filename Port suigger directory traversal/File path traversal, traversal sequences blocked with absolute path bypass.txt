@@ -1,0 +1,12 @@
+link : https://portswigger.net/web-security/file-path-traversal/lab-absolute-path-bypass
+
+goal : is to find the /etc/passwd content
+problem : we can't travel through directories from the filename of the image to the /etc/passwd file
+solution :the filname given is trated as a default working directory
+
+stes : 
+1-we intercept the product detail page by burp suite
+2-we can get product image response
+3-we send the get request result to the reapeter
+4-we change the filename path to the /etc/passwd
+finnaly we get the result the content of the /etc/passwd

@@ -1,0 +1,14 @@
+lab link : https://portswigger.net/web-security/file-path-traversal/lab-validate-file-extension-null-byte-bypass
+
+goal : is to get the data of the file passwd by path traversal and by passing the required extension .png 
+
+Null Byte Injection is an active exploitation technique used to bypass sanity checking filters in web infrastructure by adding URL-encoded null byte characters : %00
+Like impassing the type of file if is it true .png or .txt 
+
+steps :
+1-we intercept the product detail page by burp suite
+2-we can get product image response
+3-we send the get request result to the reapeter
+4-we just add out path traversal  ../../../etc/passwd and 00%.png after passwd (we added the null bits)
+
+finnally : we get ../../../etc/passwd00%.png
